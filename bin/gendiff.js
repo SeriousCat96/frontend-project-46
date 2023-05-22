@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+import { Command } from 'commander';
+const program = new Command();
+
+program
+  .name('gendiff')
+  .version('1.0.0', '-V, --version', 'output the version number')
+  .helpOption('-h, --help', 'output usage information');
+
+program.parse();
