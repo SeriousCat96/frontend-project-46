@@ -18,3 +18,5 @@ gendiff -h
 ```
 
 ### Demo:
+
+[![asciicast](https://asciinema.org/a/587158.svg)](https://asciinema.org/a/587158)
