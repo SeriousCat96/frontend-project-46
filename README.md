@@ -7,7 +7,7 @@
 
 ### Системные требования:
 
-node: v14 or higher
+node: v16 or higher
 
 ### Установка
 
