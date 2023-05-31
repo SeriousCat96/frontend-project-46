@@ -25,4 +25,4 @@ gendiff -h
 
 [![asciicast](https://asciinema.org/a/587158.svg)](https://asciinema.org/a/587158)
 
-[![Image-5.png](https://i.postimg.cc/zvNtMFV5/Image-5.png)]
+![Image-5.png](https://i.postimg.cc/zvNtMFV5/Image-5.png)
