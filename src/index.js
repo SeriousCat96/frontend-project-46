@@ -20,7 +20,7 @@ function getObjectFormat(objPath) {
   return path.extname(objPath).slice(1);
 }
 
-export default function genDiff(objPath1, objPath2, format) {
+export default function genDiff(objPath1, objPath2, formatName) {
   const objFormat1 = getObjectFormat(objPath1);
   const objFormat2 = getObjectFormat(objPath2);
 
@@ -30,5 +30,5 @@ export default function genDiff(objPath1, objPath2, format) {
   const obj1 = parseObject(importObject(path1), objFormat1);
   const obj2 = parseObject(importObject(path2), objFormat2);
 
-  return getFormatter(getObjectDiff(obj1, obj2), format);
+  return getFormatter(getObjectDiff(obj1, obj2), formatName);
 }

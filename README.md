@@ -25,4 +25,4 @@ gendiff -h
 
 ![Image-6.png](https://i.postimg.cc/G90dqwhM/Image-6.png)
 
-![Image-7.png](https://i.postimg.cc/QMVN8qPJ/Image-7.png)
+![Image-8.png](https://i.postimg.cc/Gp10NxRp/Image-8.png)

@@ -1,5 +1,12 @@
 import _ from 'lodash';
 
+function toString(value) {
+  if (_.isPlainObject(value)) {
+    return '[complex value]';
+  }
+  return _.isString(value) ? `'${value}'` : value;
+}
+
 export default function format(data) {
   const iter = (currentValue, ancestry) => {
     const lines = Object
@@ -10,11 +17,11 @@ export default function format(data) {
 
         switch (val.type) {
           case 'added':
-            return `Property '${property}' was added with value "${val.value}"`;
+            return `Property '${property}' was added with value: ${toString(val.value)}`;
           case 'removed':
             return `Property '${property}' was removed`;
           case 'modified':
-            return `Property '${property}' was modified from "${val.oldValue}" to "${val.newValue}"`;
+            return `Property '${property}' was modified. From ${toString(val.oldValue)} to ${toString(val.newValue)}`;
           case 'nested':
             return `${iter(val.children, newKey)}`;
           default:
