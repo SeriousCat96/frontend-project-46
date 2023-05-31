@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import parseObject from './parsers.js';
 import getObjectDiff from './diff.js';
+import getFormatter from './formatters/index.js';
 
 function resolvePath(filepath) {
   if (!path.isAbsolute(filepath)) {
@@ -19,7 +20,7 @@ function getObjectFormat(objPath) {
   return path.extname(objPath).slice(1);
 }
 
-export default function genDiff(objPath1, objPath2) {
+export default function genDiff(objPath1, objPath2, format) {
   const objFormat1 = getObjectFormat(objPath1);
   const objFormat2 = getObjectFormat(objPath2);
 
@@ -29,5 +30,5 @@ export default function genDiff(objPath1, objPath2) {
   const obj1 = parseObject(importObject(path1), objFormat1);
   const obj2 = parseObject(importObject(path2), objFormat2);
 
-  return getObjectDiff(obj1, obj2);
+  return getFormatter(getObjectDiff(obj1, obj2), format);
 }
