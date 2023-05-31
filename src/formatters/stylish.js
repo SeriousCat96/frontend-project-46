@@ -18,7 +18,6 @@ export default function format(data) {
     if (!_.isPlainObject(curentValue)) {
       return `${curentValue}`;
     }
-
     const bracketIndent = placeholder.repeat((depth - 1) * indentsCount);
     const lines = Object
       .entries(curentValue)
@@ -36,11 +35,7 @@ export default function format(data) {
             return `${getIndent(depth)}  ${key}: ${iter(val.value || val, depth + 1)}`;
         }
       });
-    return [
-      '{',
-      ...lines,
-      `${bracketIndent}}`,
-    ].join('\n');
+    return ['{', ...lines, `${bracketIndent}}`].join('\n');
   };
   return iter(data, 1);
 }
