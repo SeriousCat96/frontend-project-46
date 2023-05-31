@@ -24,3 +24,5 @@ gendiff -h
 ### Demo:
 
 [![asciicast](https://asciinema.org/a/587158.svg)](https://asciinema.org/a/587158)
+
+[YAML diff](https://postimg.cc/2bH7LvQX)

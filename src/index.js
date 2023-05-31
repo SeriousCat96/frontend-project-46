@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import parseObject from './parser.js';
+import parseObject from './parsers.js';
 import getObjectDiff from './diff.js';
 
 function resolvePath(filepath) {

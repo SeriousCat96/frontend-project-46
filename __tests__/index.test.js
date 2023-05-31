@@ -18,6 +18,14 @@ test('json diff success', () => {
   expect(genDiff(filePath1, filePath2)).toBe(result);
 });
 
+test('yaml diff success', () => {
+  const filePath1 = getFixturePath('1.yml');
+  const filePath2 = getFixturePath('2.yaml');
+  const result = readFile('result');
+
+  expect(genDiff(filePath1, filePath2)).toBe(result);
+});
+
 test('txt parse error', () => {
   const filePath1 = getFixturePath('1.txt');
   const filePath2 = getFixturePath('1.txt');
