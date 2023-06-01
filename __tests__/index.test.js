@@ -26,6 +26,14 @@ test('json diff with plain formatter is success', () => {
   expect(genDiff(filePath1, filePath2, 'plain')).toBe(result);
 });
 
+test('json diff with json formatter is success', () => {
+  const filePath1 = getFixturePath('1.json');
+  const filePath2 = getFixturePath('2.json');
+  const result = readFile('result.json');
+
+  expect(genDiff(filePath1, filePath2, 'json')).toBe(result);
+});
+
 test('yaml diff with stylish formatter is success', () => {
   const filePath1 = getFixturePath('1.yml');
   const filePath2 = getFixturePath('2.yaml');
@@ -42,9 +50,24 @@ test('yaml diff with plain formatter is success', () => {
   expect(genDiff(filePath1, filePath2, 'plain')).toBe(result);
 });
 
+test('yaml diff with json formatter is success', () => {
+  const filePath1 = getFixturePath('1.yml');
+  const filePath2 = getFixturePath('2.yaml');
+  const result = readFile('result.json');
+
+  expect(genDiff(filePath1, filePath2, 'json')).toBe(result);
+});
+
 test('txt parse error', () => {
   const filePath1 = getFixturePath('1.txt');
   const filePath2 = getFixturePath('1.txt');
 
   expect(() => genDiff(filePath1, filePath2, 'stylish')).toThrow('Unknown format: txt');
+});
+
+test('unknown formatter error', () => {
+  const filePath1 = getFixturePath('1.json');
+  const filePath2 = getFixturePath('2.json');
+
+  expect(() => genDiff(filePath1, filePath2, 'dummy')).toThrow('Unknown formatter: dummy');
 });
